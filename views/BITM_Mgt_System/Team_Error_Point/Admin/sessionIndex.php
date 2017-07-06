@@ -94,23 +94,20 @@ include_once('../../../../vendor/autoload.php');
 								<td>$row->start_time</td>
 								<td>$row->end_time</td>
 								<td>
-									<a href='sessionCreate.php?id=$row->id' title='Session'>
-										<button type='button' class=\"btn btn-success btn-icon\">Add Student</button>
-									</a>
 
-									<a href='batchView.php?id=$row->id' title='View'>
+									<a href='sessionView.php?id=$row->id' title='View'>
 											<button type='button' class=\"btn btn-default btn-icon\">View</button>
 										</a>
 
-									<a href='batchEdit.php?id=$row->id' title='Edit'>
+									<a href='sessionEdit.php?id=$row->id' title='Edit'>
 											<button type='button' class=\"btn btn-primary btn-icon\">Edit</button>
 										</a>
 
-									<a href='batchTrash.php?id=$row->id' title='Trash'>
+									<a href='sessionTrash.php?id=$row->id' title='Trash'>
 											<button type='button' class=\"btn btn-warning btn-icon\">Trash</button>
 										</a>
 
-									<a href='batchDelete.php?id=$row->id' title='Delete'>
+									<a href='sessionDelete.php?id=$row->id' title='Delete'>
 											<button type='button' onclick='return confirm_delete()' class=\"btn btn-danger btn-icon\">Delete</button>
 										</a>
 

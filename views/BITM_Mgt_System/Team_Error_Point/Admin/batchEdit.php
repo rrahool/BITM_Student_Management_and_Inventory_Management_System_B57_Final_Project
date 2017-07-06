@@ -2,6 +2,7 @@
 
     require_once "../../../../vendor/autoload.php";
 
+    use App\Admin\Course;
     use App\Admin\Batch;
     use App\Message\Message;
     use App\Utility\Utility;
@@ -14,11 +15,19 @@
         Utility::redirect("batchIndex.php");
     }
 
-    $obj = new Batch();
+    $objCourse = new Course();
+    $objCourse->setData($_GET);
+    $singleDataCourse = $objCourse->view();
 
-    $obj->setData($_GET);
 
-    $singleData = $obj->view();
+    $objBatch = new Batch();
+
+    $id = $singleDataCourse->id;
+    $allData = $objBatch->selectedBatches($id);
+
+    $objBatch->setData($_GET);
+
+    $singleDataBatch = $objBatch->view();
 
 ?>
 
@@ -59,12 +68,13 @@
 
                                 <div class="panel-body">
 
-                                    <input type="hidden" class="form-control" name="id" value="<?php echo $singleData->id ?>">
+                                    <input type="hidden" class="form-control" name="id" value="<?php echo $allData->id ?>">
+
 
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label">Batch Name:</label>
                                         <div class="col-lg-9">
-                                            <input type="text" class="form-control" name="batch_name" value="<?php echo $singleData->batch ?>" required="required">
+                                            <input type="text" class="form-control" name="batch_name" value="<?php echo $singleDataBatch->batch ?>" required="required">
                                         </div>
                                     </div>
 
