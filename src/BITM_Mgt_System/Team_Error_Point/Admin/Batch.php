@@ -71,7 +71,7 @@ class Batch extends Database
 
     public function selectedBatches($id){
 
-        $query = "SELECT * FROM `tbl_batches` WHERE `course_id`=".$id;
+        $query = "SELECT * FROM `tbl_batches` WHERE `course_id`=".$id ;
 
         $STH = $this->DBH->query($query);
 

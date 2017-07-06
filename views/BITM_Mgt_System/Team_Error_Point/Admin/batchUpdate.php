@@ -13,4 +13,6 @@ $obj->update();
 
 //Utility::dd($_POST);
 
-Utility::redirect("batchIndex.php");
+$course_id = $obj->course_id;
+
+Utility::redirect("batchIndex.php?id=$course_id");
