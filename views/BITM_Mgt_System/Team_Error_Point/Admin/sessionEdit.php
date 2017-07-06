@@ -10,8 +10,8 @@
 
     if(!isset($_GET['id'])) {
 
-        Message::message("You can't visit batchView.php without id (ex: batchView.php?id=23)");
-        Utility::redirect("batchIndex.php");
+        Message::message("You can't visit sessionView.php without id (ex: sessionView.php?id=23)");
+        Utility::redirect("courseCreate.php");
     }
 
     $obj = new Session();
@@ -19,6 +19,7 @@
     $obj->setData($_GET);
 
     $singleData = $obj->view();
+
 
 ?>
 
@@ -61,11 +62,13 @@
 
                                     <input type="hidden" class="form-control" name="id" value="<?php echo $singleData->id ?>">
 
+                                    <input type="hidden" class="form-control" name="batch_id" value="<?php echo $singleData->batch_id ?>">
+
                                     <div class="row">
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>Session-1 Date: </label>
+                                                <label>Session <?php echo $singleData->id ?> Date: </label>
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="icon-calendar22"></i></span>
                                                     <input type="text" id="datepicker" class="form-control" name="date" value="<?php echo $singleData->date ?>">

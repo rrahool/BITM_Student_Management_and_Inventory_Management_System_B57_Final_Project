@@ -13,4 +13,7 @@ $obj->update();
 
 //Utility::dd($_POST);
 
-Utility::redirect("sessionIndex.php");
+
+$batch_id = $obj->batch_id;
+
+Utility::redirect("sessionIndex.php?id=$batch_id");

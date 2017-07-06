@@ -82,7 +82,7 @@
 
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label>Session-1 Date: </label>
+                                                    <label>Session-(No.) Date: </label>
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="icon-calendar22"></i></span>
                                                         <input type="text" id="datepicker" class="form-control" name="date">

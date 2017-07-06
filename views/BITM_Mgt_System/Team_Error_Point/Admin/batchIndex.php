@@ -91,7 +91,7 @@ include_once('../../../../vendor/autoload.php');
 								<td>$row->batch</td>
 								<td>
 
-								    <a href='studentCreate.php?id=$row->id' title='Student'>
+								    <a href='index2.php?id=$row->id' title='Student'>
 										<button type='button' class=\"btn btn-info btn-icon\">Import Student</button>
 									</a>
 
