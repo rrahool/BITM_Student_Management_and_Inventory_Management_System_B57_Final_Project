@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2017 at 03:04 PM
+-- Generation Time: Jul 07, 2017 at 01:08 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -76,7 +76,7 @@ CREATE TABLE `tbl_batches` (
 
 INSERT INTO `tbl_batches` (`id`, `course_id`, `batch`) VALUES
 (1, 1, 'PHP- B57'),
-(2, 1, 'PHP - B58 dgfdxgdxg'),
+(2, 1, 'PHP - B58'),
 (3, 1, 'PHP- B59'),
 (4, 1, 'PHP- B56'),
 (6, 2, 'WD - B62'),
@@ -141,9 +141,16 @@ CREATE TABLE `tbl_session` (
 --
 
 INSERT INTO `tbl_session` (`id`, `batch_id`, `date`, `start_time`, `end_time`) VALUES
-(1, 1, '2017-07-13', '01:30:00', '00:00:00'),
-(2, 1, '2017-07-14', '09:00:00', '00:00:00'),
-(3, 1, '2017-07-08', '13:30:00', '17:30:00');
+(1, 1, '2017-04-01', '13:30:00', '17:30:00'),
+(2, 1, '2017-04-03', '13:30:00', '17:30:00'),
+(4, 1, '2017-04-05', '13:30:00', '17:30:00'),
+(6, 1, '2017-04-08', '13:30:00', '17:30:00'),
+(7, 1, '2017-04-10', '13:30:00', '17:30:00'),
+(8, 1, '2017-04-12', '13:30:00', '17:30:00'),
+(9, 1, '2017-04-15', '13:30:00', '17:30:00'),
+(10, 1, '2017-04-17', '13:30:00', '17:30:00'),
+(11, 1, '2017-04-19', '13:30:00', '17:30:00'),
+(13, 1, '2017-04-22', '13:30:00', '17:30:00');
 
 -- --------------------------------------------------------
 
@@ -166,14 +173,30 @@ CREATE TABLE `tbl_stock` (
 --
 
 CREATE TABLE `tbl_students` (
-  `id` int(11) NOT NULL,
+  `batch_id` int(11) NOT NULL,
   `seid` int(11) NOT NULL,
-  `firstname` varchar(100) NOT NULL,
-  `lastname` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `pro_pic` varchar(100) NOT NULL
+  `phone` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_students`
+--
+
+INSERT INTO `tbl_students` (`batch_id`, `seid`, `name`, `email`, `phone`) VALUES
+(1, 168501, 'Rahul Biswas', 'rrahoolessence209@gmail.com', '1677549094'),
+(1, 168502, 'Avinanda Chakraborty', 'aavinandachy209@gmail.com', '1626019694'),
+(1, 168503, 'John Doe', 'johndoe@gmail.com', '1764416712'),
+(1, 168507, 'Cemila Cabalo', 'cemilacab02@gmail.com', '1945323200'),
+(1, 168508, 'Cemila Cabalo', 'cemilacab02@gmail.com', '1945323200'),
+(1, 168509, 'Cemila Cabalo', 'cemilacab02@gmail.com', '1945323200'),
+(1, 168510, 'Cemila Cabalo', 'cemilacab02@gmail.com', '1945323200'),
+(21, 178501, 'jjzjdjkzfjkd', 'sdfufsdfhjf@gmail.com', '45456555'),
+(21, 178502, 'sdfszfszdsx', 'fggszfv@gmail.com', '54141748'),
+(21, 178503, 'oigfsfdhz', 'ivvzxdzs@gmail.com', '465615211'),
+(21, 178507, 'xfdgdrzs', 'frvssdf@gmail.com', '1945323200'),
+(21, 178508, 'Cemila Cabalo', 'cemilacab02@gmail.com', '1945323200');
 
 -- --------------------------------------------------------
 
@@ -262,7 +285,8 @@ ALTER TABLE `tbl_stock`
 -- Indexes for table `tbl_students`
 --
 ALTER TABLE `tbl_students`
-  ADD PRIMARY KEY (`id`,`seid`);
+  ADD PRIMARY KEY (`seid`,`name`,`email`,`phone`),
+  ADD KEY `batch_id` (`batch_id`);
 
 --
 -- Indexes for table `tbl_student_temp`
@@ -289,7 +313,7 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT for table `tbl_batches`
 --
 ALTER TABLE `tbl_batches`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `tbl_courses`
 --
@@ -299,16 +323,11 @@ ALTER TABLE `tbl_courses`
 -- AUTO_INCREMENT for table `tbl_session`
 --
 ALTER TABLE `tbl_session`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `tbl_stock`
 --
 ALTER TABLE `tbl_stock`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `tbl_students`
---
-ALTER TABLE `tbl_students`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tbl_student_temp`
@@ -335,6 +354,12 @@ ALTER TABLE `tbl_batches`
 --
 ALTER TABLE `tbl_session`
   ADD CONSTRAINT `tbl_session_ibfk_1` FOREIGN KEY (`batch_id`) REFERENCES `tbl_batches` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tbl_students`
+--
+ALTER TABLE `tbl_students`
+  ADD CONSTRAINT `tbl_students_ibfk_1` FOREIGN KEY (`batch_id`) REFERENCES `tbl_batches` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
