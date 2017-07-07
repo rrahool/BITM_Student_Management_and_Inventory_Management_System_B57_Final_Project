@@ -88,7 +88,7 @@
 <!-- Main navbar -->
 <div class="navbar navbar-inverse header-highlight bg-indigo">
     <div class="navbar-header">
-        <a class="navbar-brand" href="index.php"><img src="../../../../resources/assets/images/logo_light.png" alt=""></a>
+        <a class="navbar-brand" href="courseCreate.php"><img src="../../../../resources/assets/images/logo_light.png" alt=""></a>
 
         <ul class="nav navbar-nav visible-xs-block">
             <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>

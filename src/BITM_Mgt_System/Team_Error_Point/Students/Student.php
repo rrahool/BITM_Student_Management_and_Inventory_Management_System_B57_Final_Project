@@ -3,6 +3,9 @@
 namespace App\Student;
 
 use App\Model\Database as DB;
+use App\Admin\Course;
+use App\Admin\Batch;
+use App\Admin\Session;
 use App\Message\Message;
 use App\Utility\Utility;
 use PDO;
@@ -10,7 +13,6 @@ use PDO;
 class Student extends DB{
 
     public $id;
-    public $name;
     public $email="";
     public $seid="";
     public $password="";

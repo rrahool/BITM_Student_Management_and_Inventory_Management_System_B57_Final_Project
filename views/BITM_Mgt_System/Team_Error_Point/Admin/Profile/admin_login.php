@@ -49,7 +49,7 @@ use App\Utility\Utility;
 	<!-- Main navbar -->
 	<div class="navbar navbar-inverse bg-indigo">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="../index_2.php"><img src="../../../../../resources/assets/images/logo_light.png" alt=""></a>
+			<a class="navbar-brand" href="../courseCreate.php"><img src="../../../../../resources/assets/images/logo_light.png" alt=""></a>
 
 			<ul class="nav navbar-nav pull-right visible-xs-block">
 				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>

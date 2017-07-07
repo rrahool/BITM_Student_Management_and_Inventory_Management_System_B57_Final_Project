@@ -54,7 +54,7 @@ use App\Utility\Utility;
 	<!-- Main navbar -->
 	<div class="navbar navbar-inverse bg-indigo has-shadow">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="../index_2.php"><img src="../../../../../resources/assets/images/logo_light.png" alt=""></a>
+			<a class="navbar-brand" href="../courseCreate.php"><img src="../../../../../resources/assets/images/logo_light.png" alt=""></a>
 
 			<ul class="nav navbar-nav pull-right visible-xs-block">
 				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-grid3"></i></a></li>
@@ -110,6 +110,10 @@ use App\Utility\Utility;
 
 			<!-- Main content -->
 			<div class="content-wrapper">
+
+				<!-- Content area -->
+				<div class="content">
+
 
 				<!-- Registration form -->
 				<form action="registration.php" method="post" class="registration-form">
@@ -188,7 +192,7 @@ use App\Utility\Utility;
 									</div>
 
 									<div class="clearfix">
-										<button type="button" class="btn btn-default pull-left"><i class="icon-arrow-left13 position-left"></i> Login</button>
+										<a href="admin_login.php" type="button" class="btn btn-default pull-left"><i class="icon-arrow-left13 position-left"></i> Login</a>
 										<button type="submit" class="btn bg-pink-400 btn-labeled btn-labeled-right pull-right"><b><i class="icon-plus3"></i></b> Create account</button>
 									</div>
 								</div>
@@ -197,6 +201,14 @@ use App\Utility\Utility;
 					</div>
 				</form>
 				<!-- /registration form -->
+
+					<!-- Footer -->
+					<div class="footer text-muted text-center">
+						&copy; 2015. <a href="#">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">Eugene Kopyov</a>
+					</div>
+					<!-- /footer -->
+
+				</div>
 
 			</div>
 			<!-- /main content -->
@@ -208,27 +220,7 @@ use App\Utility\Utility;
 	<!-- /page container -->
 
 
-	<!-- Footer -->
-	<div class="navbar navbar-default navbar-fixed-bottom footer">
-		<ul class="nav navbar-nav visible-xs-block">
-			<li><a class="text-center collapsed" data-toggle="collapse" data-target="#footer"><i class="icon-circle-up2"></i></a></li>
-		</ul>
 
-		<div class="navbar-collapse collapse" id="footer">
-			<div class="navbar-text">
-				&copy; 2015. <a href="#" class="navbar-link">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov" class="navbar-link" target="_blank">Eugene Kopyov</a>
-			</div>
-
-			<div class="navbar-right">
-				<ul class="nav navbar-nav">
-					<li><a href="#">About</a></li>
-					<li><a href="#">Terms</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- /footer -->
 
 </body>
 

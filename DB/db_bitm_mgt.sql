@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2017 at 01:08 AM
+-- Generation Time: Jul 07, 2017 at 03:12 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -54,8 +54,12 @@ INSERT INTO `tbl_admin` (`id`, `firstname`, `lastname`, `email`, `username`, `pa
 CREATE TABLE `tbl_attendance` (
   `id` int(11) NOT NULL,
   `seid` int(11) NOT NULL,
-  `attendance` varchar(100) NOT NULL,
-  `session` varchar(100) NOT NULL
+  `session` varchar(100) NOT NULL,
+  `entry_verification` varchar(100) NOT NULL,
+  `entry_time` varchar(20) NOT NULL,
+  `exit_verification` varchar(100) NOT NULL,
+  `exit_time` varchar(20) NOT NULL,
+  `attendance_status` varchar(100) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -131,26 +135,12 @@ INSERT INTO `tbl_courses` (`id`, `name`) VALUES
 CREATE TABLE `tbl_session` (
   `id` int(11) NOT NULL,
   `batch_id` int(11) NOT NULL,
+  `session_name` varchar(100) NOT NULL,
   `date` date NOT NULL,
   `start_time` time NOT NULL,
-  `end_time` time NOT NULL
+  `end_time` time NOT NULL,
+  `room_no` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_session`
---
-
-INSERT INTO `tbl_session` (`id`, `batch_id`, `date`, `start_time`, `end_time`) VALUES
-(1, 1, '2017-04-01', '13:30:00', '17:30:00'),
-(2, 1, '2017-04-03', '13:30:00', '17:30:00'),
-(4, 1, '2017-04-05', '13:30:00', '17:30:00'),
-(6, 1, '2017-04-08', '13:30:00', '17:30:00'),
-(7, 1, '2017-04-10', '13:30:00', '17:30:00'),
-(8, 1, '2017-04-12', '13:30:00', '17:30:00'),
-(9, 1, '2017-04-15', '13:30:00', '17:30:00'),
-(10, 1, '2017-04-17', '13:30:00', '17:30:00'),
-(11, 1, '2017-04-19', '13:30:00', '17:30:00'),
-(13, 1, '2017-04-22', '13:30:00', '17:30:00');
 
 -- --------------------------------------------------------
 
@@ -191,7 +181,7 @@ INSERT INTO `tbl_students` (`batch_id`, `seid`, `name`, `email`, `phone`) VALUES
 (1, 168507, 'Cemila Cabalo', 'cemilacab02@gmail.com', '1945323200'),
 (1, 168508, 'Cemila Cabalo', 'cemilacab02@gmail.com', '1945323200'),
 (1, 168509, 'Cemila Cabalo', 'cemilacab02@gmail.com', '1945323200'),
-(1, 168510, 'Cemila Cabalo', 'cemilacab02@gmail.com', '1945323200'),
+(12, 112233, 'Cemila Cabalo', 'cemilacab02@gmail.com', '1945323200'),
 (21, 178501, 'jjzjdjkzfjkd', 'sdfufsdfhjf@gmail.com', '45456555'),
 (21, 178502, 'sdfszfszdsx', 'fggszfv@gmail.com', '54141748'),
 (21, 178503, 'oigfsfdhz', 'ivvzxdzs@gmail.com', '465615211'),
@@ -255,6 +245,14 @@ ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_attendance`
+--
+ALTER TABLE `tbl_attendance`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `session` (`session`),
+  ADD KEY `seid` (`seid`);
+
+--
 -- Indexes for table `tbl_batches`
 --
 ALTER TABLE `tbl_batches`
@@ -272,7 +270,7 @@ ALTER TABLE `tbl_courses`
 -- Indexes for table `tbl_session`
 --
 ALTER TABLE `tbl_session`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`,`session_name`,`date`,`start_time`,`end_time`,`room_no`),
   ADD KEY `batch_id` (`batch_id`);
 
 --
@@ -310,10 +308,15 @@ ALTER TABLE `tbl_trainers`
 ALTER TABLE `tbl_admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
+-- AUTO_INCREMENT for table `tbl_attendance`
+--
+ALTER TABLE `tbl_attendance`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `tbl_batches`
 --
 ALTER TABLE `tbl_batches`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `tbl_courses`
 --
@@ -323,7 +326,7 @@ ALTER TABLE `tbl_courses`
 -- AUTO_INCREMENT for table `tbl_session`
 --
 ALTER TABLE `tbl_session`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tbl_stock`
 --
@@ -342,6 +345,12 @@ ALTER TABLE `tbl_trainers`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `tbl_attendance`
+--
+ALTER TABLE `tbl_attendance`
+  ADD CONSTRAINT `tbl_attendance_ibfk_1` FOREIGN KEY (`seid`) REFERENCES `tbl_students` (`seid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `tbl_batches`

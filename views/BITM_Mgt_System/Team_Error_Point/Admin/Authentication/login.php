@@ -16,7 +16,7 @@ if($status){
                             <strong>Welcome!</strong> You have successfully logged in.
                 </div>");
     
-     Utility::redirect('../index.php');
+     Utility::redirect('../courseCreate.php');
 
 }else{
     Message::message("
