@@ -57,7 +57,9 @@
                             <thead>
                             <tr>
                                 <th>Session ID</th>
-                                <th>Session Date</th>
+                                <th>Batch ID</th>
+                                <th>Session No.</th>
+                                <th>Date</th>
                                 <th>Start Time</th>
                                 <th>End Time</th>
                             </tr>
@@ -67,6 +69,8 @@
                                 echo "
                                     <tr>
                                         <td>$singleData->id</td>
+                                        <td>$singleData->batch_id</td>
+                                        <td>$singleData->session_no</td>
                                         <td>$singleData->date</td>
                                         <td>$singleData->start_time</td>
                                         <td>$singleData->end_time</td>

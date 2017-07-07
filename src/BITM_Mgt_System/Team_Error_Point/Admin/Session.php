@@ -19,6 +19,7 @@ class Session extends Database
 
     public $id;
     public $batch_id;
+    public $session_no;
     public $date;
     public $startTime;
     public $endTime;
@@ -32,6 +33,10 @@ class Session extends Database
 
         if(array_key_exists("batch_id",$postArray)){
             $this->batch_id = $postArray['batch_id'];
+        }
+
+        if(array_key_exists("session_no",$postArray)){
+            $this->session_no = $postArray['session_no'];
         }
 
         if(array_key_exists("date",$postArray)){
@@ -50,9 +55,9 @@ class Session extends Database
 
     public function store(){
 
-        $query = "INSERT INTO `tbl_session` (`batch_id`, `date`, `start_time`, `end_time`) VALUES (?, ?, ?, ?);";
+        $query = "INSERT INTO `tbl_session` (`batch_id`, `session_no`, `date`, `start_time`, `end_time`) VALUES (?, ?, ?, ?, ?);";
 
-        $dataArray = array($this->batch_id, $this->date, $this->startTime, $this->endTime);
+        $dataArray = array($this->batch_id, $this->session_no, $this->date, $this->startTime, $this->endTime);
 
         $STH = $this->DBH->prepare($query);
         $result = $STH->execute($dataArray);
@@ -107,11 +112,11 @@ class Session extends Database
 
     public function update(){
 
-        $query = "UPDATE `tbl_session` SET `date` = ?, `start_time` = ?, `end_time` = ?  WHERE `id` = $this->id;";
+        $query = "UPDATE `tbl_session` SET `session_no` = ?, `date` = ?, `start_time` = ?, `end_time` = ?  WHERE `id` = $this->id;";
 
         //Utility::dd($query);
 
-        $dataArray = array($this->date, $this->startTime, $this->endTime);
+        $dataArray = array($this->session_no, $this->date, $this->startTime, $this->endTime);
 
         $STH = $this->DBH->prepare($query);
         $result = $STH->execute($dataArray);

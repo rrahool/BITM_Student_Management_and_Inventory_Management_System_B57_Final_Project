@@ -80,35 +80,50 @@
                                         <input type="hidden" class="form-control" name="batch_id" value="<?php echo $singleData->id ?>">
                                         <div class="row">
 
+
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label>Session-(No.) Date: </label>
+                                                    <label>Session No.: </label>
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="icon-calendar22"></i></span>
-                                                        <input type="text" id="datepicker" class="form-control" name="date">
+                                                        <input type="text" class="form-control" name="session_no" required="required">
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label>Class Start Time: </label>
+                                                    <label>Date: </label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                                        <input type="text" id="datepicker" class="form-control" name="date" required="required">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Start Time: </label>
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="icon-alarm"></i></span>
-                                                        <input type="text" id="startTimepicker" class="form-control" name="startTime">
+                                                        <input type="text" id="startTimepicker" class="form-control" name="startTime" required="required">
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label>Class End Time: </label>
+                                                    <label>End Time: </label>
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="icon-alarm"></i></span>
-                                                        <input type="text" id="endTimepicker" class="form-control" name="endTime">
+                                                        <input type="text" id="endTimepicker" class="form-control" name="endTime" required="required">
                                                     </div>
                                                 </div>
                                             </div>
+
+                                        </div>
 
                                         </div>
 
@@ -122,11 +137,13 @@
                         </div>
                         <!-- /add courses -->
 
+                        <div class="col-lg-4">
+                            <a class="btn btn-danger" href="sessionIndex.php?id=<?php echo $id; ?>" >Existing Sessions of this Batch</a>
+                        </div>
+
                     </div>
 
-                    <div class="col-lg-4">
-                        <a class="btn btn-danger" href="sessionIndex.php?id=<?php echo $id; ?>" >Existing Sessions of this Batch</a>
-                    </div>
+
 
 
                 </div>

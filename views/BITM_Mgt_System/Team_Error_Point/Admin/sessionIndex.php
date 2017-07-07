@@ -72,12 +72,10 @@ include_once('../../../../vendor/autoload.php');
                         <table class="table table-bordered">
                             <thead>
                             <tr>
-                                <th>Session ID</th>
                                 <th>Session No.</th>
-                                <th>Batch ID</th>
                                 <th>Date</th>
-                                <th>Starting Time</th>
-                                <th>Ending Time</th>
+                                <th>Start Time</th>
+                                <th>End Time</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -87,9 +85,7 @@ include_once('../../../../vendor/autoload.php');
 
                                 echo "
 							<tr>
-								<td>$row->id</td>
-								<td>Session - $serial</td>
-								<td>$row->batch_id</td>
+								<td>$row->session_no</td>
 								<td>$row->date</td>
 								<td>$row->start_time</td>
 								<td>$row->end_time</td>

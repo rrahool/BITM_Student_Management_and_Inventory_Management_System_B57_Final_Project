@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2017 at 03:12 PM
+-- Generation Time: Jul 08, 2017 at 12:44 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -135,12 +135,24 @@ INSERT INTO `tbl_courses` (`id`, `name`) VALUES
 CREATE TABLE `tbl_session` (
   `id` int(11) NOT NULL,
   `batch_id` int(11) NOT NULL,
-  `session_name` varchar(100) NOT NULL,
+  `session_no` int(11) NOT NULL,
   `date` date NOT NULL,
   `start_time` time NOT NULL,
   `end_time` time NOT NULL,
   `room_no` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_session`
+--
+
+INSERT INTO `tbl_session` (`id`, `batch_id`, `session_no`, `date`, `start_time`, `end_time`, `room_no`) VALUES
+(1, 1, 1, '2017-04-01', '01:30:00', '05:30:00', 0),
+(2, 1, 2, '2017-07-03', '01:30:00', '05:30:00', 0),
+(4, 1, 3, '2017-04-05', '01:30:00', '05:30:00', 0),
+(5, 1, 4, '2017-04-08', '01:30:00', '05:30:00', 0),
+(6, 1, 5, '2017-04-10', '01:30:00', '05:30:00', 0),
+(7, 1, 6, '2017-07-12', '01:30:00', '05:30:00', 0);
 
 -- --------------------------------------------------------
 
@@ -270,7 +282,7 @@ ALTER TABLE `tbl_courses`
 -- Indexes for table `tbl_session`
 --
 ALTER TABLE `tbl_session`
-  ADD PRIMARY KEY (`id`,`session_name`,`date`,`start_time`,`end_time`,`room_no`),
+  ADD PRIMARY KEY (`id`,`session_no`,`date`,`start_time`,`end_time`,`room_no`),
   ADD KEY `batch_id` (`batch_id`);
 
 --
@@ -326,7 +338,7 @@ ALTER TABLE `tbl_courses`
 -- AUTO_INCREMENT for table `tbl_session`
 --
 ALTER TABLE `tbl_session`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `tbl_stock`
 --

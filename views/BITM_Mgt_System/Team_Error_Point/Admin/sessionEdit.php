@@ -68,7 +68,17 @@
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>Session <?php echo $singleData->id ?> Date: </label>
+                                                <label>Session No.: </label>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                                    <input type="text" class="form-control" name="session_no" value="<?php echo $singleData->session_no ?>">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Date: </label>
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="icon-calendar22"></i></span>
                                                     <input type="text" id="datepicker" class="form-control" name="date" value="<?php echo $singleData->date ?>">
@@ -76,9 +86,13 @@
                                             </div>
                                         </div>
 
+                                    </div>
+
+                                    <div class="row">
+
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>Class Start Time: </label>
+                                                <label>Start Time: </label>
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="icon-alarm"></i></span>
                                                     <input type="text" id="startTimepicker" class="form-control" name="startTime" value="<?php echo $singleData->start_time ?>">
@@ -88,13 +102,15 @@
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label>Class End Time: </label>
+                                                <label>End Time: </label>
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="icon-alarm"></i></span>
                                                     <input type="text" id="endTimepicker" class="form-control" name="endTime" value="<?php echo $singleData->end_time ?>">
                                                 </div>
                                             </div>
                                         </div>
+
+                                    </div>
 
                                     </div>
 
