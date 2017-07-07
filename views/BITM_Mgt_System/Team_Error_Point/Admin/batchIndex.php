@@ -91,17 +91,17 @@ include_once('../../../../vendor/autoload.php');
 								<td>$row->batch</td>
 								<td>
 
-								    <a href='index2.php?id=$row->id' title='Student'>
-										<button type='button' class=\"btn btn-info btn-icon\">Import Student</button>
+									<a href='studentCreate.php?id=$row->id' title='Student'>
+											<button type='button' class=\"btn btn-info btn-icon\">Import Student</button>
 									</a>
 
-									<a href='sessionCreate.php?id=$row->id' title='Session'>
-										<button type='button' class=\"btn btn-success btn-icon\">Add Session</button>
+									<a href='sessionCreate.php?id=$row->id' title='Student'>
+											<button type='button' class=\"btn btn-success btn-icon\">Add Session</button>
 									</a>
 
-									<a href='batchView.php?id=$row->id' title='View'>
-											<button type='button' class=\"btn btn-default btn-icon\">View</button>
-										</a>
+                                    <a href='batchView.php?id=$row->id' title='View'>
+                                        <button type='button' class=\"btn btn-default btn-icon\">View</button>
+                                    </a>
 
 									<a href='batchEdit.php?id=$row->id' title='Edit'>
 											<button type='button' class=\"btn btn-primary btn-icon\">Edit</button>
@@ -121,7 +121,6 @@ include_once('../../../../vendor/autoload.php');
                                 $serial++;
                             }
                             ?>
-
                             </tbody>
                         </table>
                     </div>
