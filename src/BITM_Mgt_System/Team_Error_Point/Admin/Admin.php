@@ -119,7 +119,7 @@ class Admin extends DB{
         else {
             echo "Error";
         }
-        return Utility::redirect('../../../../views/BITM_Mgt/System/Team_Error_Point/Admin/Profile/admin_registration.php');
+        return Utility::redirect('../../../../views/BITM_Mgt/System/Team_Error_Point/Admin/Profile/student_attendance_form.php');
     }
 
     public function update(){

@@ -15,7 +15,6 @@ class Student extends DB{
     public $id;
     public $email="";
     public $seid="";
-    public $password="";
     public $email_token="";
 
     public function __construct()
@@ -28,18 +27,16 @@ class Student extends DB{
         if(array_key_exists('id',$data)){
             $this->id=$data['id'];
         }
-        if(array_key_exists('name',$data)){
-            $this->name=$data['name'];
-        }
+
         if(array_key_exists('email',$data)){
             $this->email=$data['email'];
         }
+
         if(array_key_exists('seid',$data)){
             $this->seid=$data['seid'];
         }
-        if(array_key_exists('password',$data)){
-            $this->password=md5($data['password']);
-        }
+
+
         if(array_key_exists('email_token',$data)){
             $this->email_token=$data['email_token'];
         }
@@ -117,7 +114,7 @@ class Student extends DB{
         else {
             echo "Error";
         }
-        return Utility::redirect('../../../../views/BITM_Mgt/System/Team_Error_Point/Admin/Profile/admin_registration.php');
+        return Utility::redirect('../../../../views/BITM_Mgt/System/Team_Error_Point/Admin/Profile/student_attendance_form.php');
     }
 
     public function update(){

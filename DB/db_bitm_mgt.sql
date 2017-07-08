@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2017 at 12:44 AM
+-- Generation Time: Jul 08, 2017 at 07:48 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -152,7 +152,13 @@ INSERT INTO `tbl_session` (`id`, `batch_id`, `session_no`, `date`, `start_time`,
 (4, 1, 3, '2017-04-05', '01:30:00', '05:30:00', 0),
 (5, 1, 4, '2017-04-08', '01:30:00', '05:30:00', 0),
 (6, 1, 5, '2017-04-10', '01:30:00', '05:30:00', 0),
-(7, 1, 6, '2017-07-12', '01:30:00', '05:30:00', 0);
+(7, 1, 6, '2017-07-12', '01:30:00', '05:30:00', 0),
+(8, 2, 1, '2017-04-01', '09:30:00', '13:30:00', 0),
+(9, 2, 2, '2017-04-03', '09:30:00', '13:30:00', 0),
+(10, 2, 3, '2017-04-05', '09:30:00', '13:30:00', 0),
+(11, 3, 1, '2017-04-02', '09:30:00', '13:30:00', 0),
+(12, 3, 2, '2017-04-04', '09:30:00', '13:30:00', 0),
+(13, 3, 3, '2017-07-06', '09:30:00', '13:30:00', 0);
 
 -- --------------------------------------------------------
 
@@ -338,7 +344,7 @@ ALTER TABLE `tbl_courses`
 -- AUTO_INCREMENT for table `tbl_session`
 --
 ALTER TABLE `tbl_session`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `tbl_stock`
 --

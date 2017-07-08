@@ -112,35 +112,27 @@ use App\Utility\Utility;
 			<div class="content-wrapper">
 
 				<!-- Registration form -->
-				<form action="registration.php" method="post" class="registration-form">
+				<form action="email_attendance.php" method="post" class="registration-form">
 					<div class="row">
 						<div class="col-lg-6 col-lg-offset-3">
 							<div class="panel">
 								<div class="panel-body">
 									<div class="text-center">
 										<div class="icon-object border-success text-success"><i class="icon-plus3"></i></div>
-										<h5 class="content-group-lg">Create Admin Account <small class="display-block">All fields are required</small></h5>
+										<h5 class="content-group-lg">Student Attendance</h5>
 									</div>
 
 
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group has-feedback">
-												<input type="text" name="firstname" class="form-control" placeholder="First name" required="required">
+												<input type="text" name="seid" class="form-control" placeholder="SEID" required="required">
 												<div class="form-control-feedback">
 													<i class="icon-user-check text-muted"></i>
 												</div>
 											</div>
 										</div>
 
-										<div class="col-md-6">
-											<div class="form-group has-feedback">
-												<input type="text" name="lastname" class="form-control" placeholder="Last name" required="required">
-												<div class="form-control-feedback">
-													<i class="icon-user-check text-muted"></i>
-												</div>
-											</div>
-										</div>
 									</div>
 
 									<div class="row">
@@ -148,48 +140,18 @@ use App\Utility\Utility;
 											<div class="form-group has-feedback">
 												<input type="text" name="email" class="form-control" placeholder="Email" required="required">
 												<div class="form-control-feedback">
-													<i class="icon-mention text-muted"></i>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-md-6">
-											<div class="form-group has-feedback">
-												<input type="text" name="username" class="form-control" placeholder="Username" required="required">
-												<div class="form-control-feedback">
-													<i class="icon-user-plus text-muted"></i>
-												</div>
-											</div>
-										</div>
-									</div>
-
-									<div class="row">
-										<div class="col-md-6">
-											<div class="form-group has-feedback">
-												<input type="password" name="password" class="form-control" placeholder="Password" required="required">
-												<div class="form-control-feedback">
-													<i class="icon-user-lock text-muted"></i>
+													<i class="icon-user-check text-muted"></i>
 												</div>
 											</div>
 										</div>
 
 									</div>
 
-
-									<div class="form-group">
-
-
-										<div class="checkbox">
-											<label>
-												<input type="checkbox" class="styled">
-												Accept <a href="#">terms of service</a>
-											</label>
-										</div>
-									</div>
 
 									<div class="clearfix">
-										<button type="button" class="btn btn-default pull-left"><i class="icon-arrow-left13 position-left"></i> Login</button>
-										<button type="submit" class="btn bg-pink-400 btn-labeled btn-labeled-right pull-right"><b><i class="icon-plus3"></i></b> Create account</button>
+
+										<button type="submit" class="btn bg-pink-400 btn-labeled btn-labeled-right pull-right"><b><i class="icon-plus3"></i></b>Confirm Attendance</button>
+
 									</div>
 								</div>
 							</div>
@@ -207,28 +169,6 @@ use App\Utility\Utility;
 	</div>
 	<!-- /page container -->
 
-
-	<!-- Footer -->
-	<div class="navbar navbar-default navbar-fixed-bottom footer">
-		<ul class="nav navbar-nav visible-xs-block">
-			<li><a class="text-center collapsed" data-toggle="collapse" data-target="#footer"><i class="icon-circle-up2"></i></a></li>
-		</ul>
-
-		<div class="navbar-collapse collapse" id="footer">
-			<div class="navbar-text">
-				&copy; 2015. <a href="#" class="navbar-link">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov" class="navbar-link" target="_blank">Eugene Kopyov</a>
-			</div>
-
-			<div class="navbar-right">
-				<ul class="nav navbar-nav">
-					<li><a href="#">About</a></li>
-					<li><a href="#">Terms</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- /footer -->
 
 </body>
 

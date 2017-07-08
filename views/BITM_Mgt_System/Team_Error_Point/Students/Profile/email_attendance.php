@@ -1,23 +1,22 @@
 <?php
 
+if(!isset($_SESSION) )session_start();
 include_once('../../../../../vendor/autoload.php');
 
-use App\Admin\Admin;
-use App\Admin\AdminAuth;
+use App\Student\StudentAuth;
+use App\Student\Student;
 use App\Message\Message;
 use App\Utility\Utility;
 
-$auth= new AdminAuth();
+$auth= new StudentAuth();
 
 $status= $auth->setData($_POST)->is_exist();
 
 if($status){
-    Message::setMessage("<div class='alert alert-danger'>
-    <strong>Taken!</strong> Email has already been taken. </div>");
-    return Utility::redirect($_SERVER['HTTP_REFERER']);
-}else{
+
     $_POST['email_token'] = md5(uniqid(rand()));
-    $obj= new Admin();
+
+    $obj= new Student();
     $obj->setData($_POST)->store();
 
     require '../../../../../vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
@@ -42,4 +41,12 @@ if($status){
 
     $mail->MsgHTML($message);
     $mail->Send();
+
+
+}else{
+
+    Message::setMessage("<div class='alert alert-danger'>
+                            <strong>Taken!</strong> Sorry, Wrong Information. </div>");
+    return Utility::redirect($_SERVER['HTTP_REFERER']);
+
 }

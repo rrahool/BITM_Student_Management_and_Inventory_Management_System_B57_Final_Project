@@ -23,14 +23,14 @@ class StudentAuth extends DB{
             $this->email = $data['email'];
         }
         if (array_key_exists('seid', $data)) {
-            $this->seid = md5($data['seid']);
+            $this->seid = ($data['seid']);
         }
         return $this;
     }
 
     public function is_exist(){
 
-        $query="SELECT * FROM `tbl_student_temp` WHERE `tbl_student_temp`.`email` ='$this->email' AND `tbl_student_temp`.`seid` ='$this->seid' ";
+        $query="SELECT * FROM `tbl_student` WHERE `tbl_student`.`email` ='$this->email' AND `tbl_student`.`seid` ='$this->seid' ";
         $STH=$this->DBH->query($query);
 
         $STH->setFetchMode(PDO::FETCH_OBJ);
@@ -45,19 +45,19 @@ class StudentAuth extends DB{
         }
     }
 
-    public function is_registered(){
-        $query = "SELECT * FROM `tbl_student_temp` WHERE `email_verified`='" . 'Yes' . "' AND `email`='$this->email' AND `password`='$this->password'";
-        $STH=$this->DBH->query($query);
-        $STH->setFetchMode(PDO::FETCH_OBJ);
-        $STH->fetchAll();
-
-        $count = $STH->rowCount();
-        if ($count > 0) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
-    }
+//    public function is_registered(){
+//        $query = "SELECT * FROM `tbl_student_temp` WHERE `email_verified`='" . 'Yes' . "' AND `email`='$this->email' AND `password`='$this->password'";
+//        $STH=$this->DBH->query($query);
+//        $STH->setFetchMode(PDO::FETCH_OBJ);
+//        $STH->fetchAll();
+//
+//        $count = $STH->rowCount();
+//        if ($count > 0) {
+//            return TRUE;
+//        } else {
+//            return FALSE;
+//        }
+//    }
 
     public function logged_in(){
         if ((array_key_exists('email', $_SESSION)) && (!empty($_SESSION['email']))) {
