@@ -138,12 +138,9 @@ use App\Utility\Utility;
 
 
 							<div class="form-group">
-								<button type="submit" class="btn bg-pink-400 btn-block">Sign in <i class="icon-circle-right2 position-right"></i></button>
+								<button type="submit" class="btn bg-brown-700 btn-block">Confirm Your Entry<i class="icon-circle-right2 position-right"></i></button>
 							</div>
 
-							<div class="text-center">
-								<a href="login_password_recover.html">Forgot password?</a>
-							</div>
 						</div>
 					</form>
 					<!-- /simple login form -->

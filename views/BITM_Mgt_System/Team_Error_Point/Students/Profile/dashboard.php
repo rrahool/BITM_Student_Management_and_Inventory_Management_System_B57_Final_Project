@@ -9,9 +9,11 @@ use App\Utility\Utility;
 
 $msg = Message::message();
 
-$studentView = new StudentAuth();
+$auth = new StudentAuth();
 
-$allData = $studentView->student_tbl_view();
+$allData = $auth->check_batchNsessionSchedule();
+
+Utility::dd($_POST);
 
 
 ?>
@@ -112,26 +114,30 @@ $allData = $studentView->student_tbl_view();
                         <table class="table table-bordered">
                             <thead>
                             <tr>
-                                <th>#</th>
                                 <th>SEID</th>
                                 <th>Name</th>
                                 <th>Email</th>
+                                <th>Batch</th>
+                                <th>Date</th>
+                                <th>Session</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php
-//                            foreach($allData as $row){
-//
-//                                echo "
-//											<tr>
-//												<td>$serial</td>
-//												<td>$row->seid</td>
-//												<td>$row->name</td>
-//												<td>$row->email</td>
-//											</tr>
-//										";
-//                                $serial++;
-//                            }
+                                foreach($allData as $row){
+
+                                    echo "
+                                                <tr>
+                                                    <td>$row->seid</td>
+                                                    <td>$row->name</td>
+                                                    <td>$row->email</td>
+                                                    <td>$row->batch_id</td>
+                                                    <td>$row->date</td>
+                                                    <td>$row->session_no</td>
+                                                </tr>
+
+                                            ";
+                                }
                             ?>
 
                             </tbody>

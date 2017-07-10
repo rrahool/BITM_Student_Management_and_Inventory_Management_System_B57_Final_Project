@@ -48,28 +48,15 @@ class StudentAuth extends DB{
         }
     }
 
-    public function student_tbl_view(){
+    public function check_batchNsessionSchedule(){
 
-        $tblName = $this->email;
+        $query="SELECT * FROM `tbl_students` AS st INNER JOIN `tbl_session` AS ses ON st.batch_id = ses.batch_id WHERE `seid` = '$this->seid' AND ses.date = CURRENT_DATE AND CURRENT_TIME BETWEEN ses.start_time AND ADDTIME(ses.start_time, '04:30:00') ;";
 
-        $view = " CREATE table IF NOT EXISTS $tblName(
-                     ID INT( 11 ) AUTO_INCREMENT PRIMARY KEY,
-                     Prename VARCHAR( 50 ) NOT NULL,
-                     Name VARCHAR( 250 ) NOT NULL,
-                     StreetA VARCHAR( 150 ) NOT NULL,
-                     StreetB VARCHAR( 150 ) NOT NULL,
-                     StreetC VARCHAR( 150 ) NOT NULL,
-                     County VARCHAR( 100 ) NOT NULL,
-                     Postcode VARCHAR( 50 ) NOT NULL,
-                     Country VARCHAR( 50 ) NOT NULL); ";
+        $STH =$this->DBH->query($query);
 
-        $st = $this->DBH->exec($view);
-
-        if($st){
-
-            echo "Created";
-        }
-
+        $STH->setFetchMode(PDO::FETCH_OBJ);
+        $allData = $STH->fetchAll();
+        return $allData;
 
     }
 
