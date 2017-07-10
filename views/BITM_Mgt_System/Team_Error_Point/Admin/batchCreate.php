@@ -112,7 +112,7 @@
 
 
 			<!-- Footer -->
-				<div class="footer text-muted"">
+				<div class="footer text-muted">
 					&copy; 2017. <a href="#">BITM Management System Web App</a> by <a href="teamerrorpoint@gmail.com" target="_blank">Team Error Point - PHP B57</a>
 				</div>
 			<!-- /footer -->

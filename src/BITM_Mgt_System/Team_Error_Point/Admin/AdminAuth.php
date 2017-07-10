@@ -15,8 +15,8 @@ class AdminAuth extends DB{
     public $password = "";
 
     public function __construct(){
-        parent::__construct();
-    }
+    parent::__construct();
+}
 
     public function setData($data = Array()){
         if (array_key_exists('email', $data)) {

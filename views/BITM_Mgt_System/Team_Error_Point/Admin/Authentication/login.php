@@ -24,7 +24,7 @@ if($status){
                             <strong>Wrong information!</strong> Please try again.
                 </div>");
 
-    Utility::redirect('../Profile/admin_login.php');
+    Utility::redirect('../Profile/student_entry.php');
 
 }
 

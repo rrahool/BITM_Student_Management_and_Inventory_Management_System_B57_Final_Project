@@ -49,7 +49,10 @@ use App\Utility\Utility;
 	<!-- Main navbar -->
 	<div class="navbar navbar-inverse bg-indigo">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="../courseCreate.php"><img src="../../../../../resources/assets/images/logo_light.png" alt=""></a>
+			<p style="padding-top: 14px; padding-left: 22px;">
+				<img src="../../../../../resources/assets/images/logo_icon_light.png" alt="" height="18px"; width="25px";>
+				<b style="padding-left: 5px; font-size: 15px;">Admin Login</b>
+			</p>
 
 			<ul class="nav navbar-nav pull-right visible-xs-block">
 				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
@@ -147,11 +150,11 @@ use App\Utility\Utility;
 
 					<!-- Footer -->
 					<div class="footer text-muted text-center">
-						&copy; 2015. <a href="#">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">Eugene Kopyov</a>
-					</div>
-					<!-- /footer -->
-
+					&copy; 2017. <a href="#">BITM Management System Web App</a> by <a href="teamerrorpoint@gmail.com" target="_blank">Team Error Point - PHP B57</a>
 				</div>
+				<!-- /footer -->
+
+			</div>
 				<!-- /content area -->
 
 			</div>

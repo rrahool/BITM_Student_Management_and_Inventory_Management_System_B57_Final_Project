@@ -15,7 +15,7 @@
     $status = $auth->setData($_SESSION)->logged_in();
 
     if(!$status) {
-        Utility::redirect('Profile/admin_login.php');
+        Utility::redirect('Profile/student_entry.php');
         return;
     }
 
@@ -64,6 +64,22 @@
 
     <script src="../../../../resources/assets/js/jquery.js"></script>
 
+    <!-- specifically used for Datepicker, block 1 of 2 start -->
+
+    <link rel="stylesheet" href="../../../../resources/assets/css/jquery-ui.css">
+    <script src="../../../../resources/assets/js/jquery-1.12.4.js"></script>
+    <script src="../../../../resources/assets/js/jquery-ui.js"></script>
+
+    <!-- specifically used for Datepicker, block 1 of 2 end -->
+
+    <!-- specifically used for Timepicker, block 1 of 2 start -->
+
+    <link rel="stylesheet" href="../../../../resources/assets/css/jquery.timepicker.css">
+    <script src="../../../../resources/assets/js/jquery.timepicker.js"></script>
+    <script src="../../../../resources/assets/js/jquery.timepicker.min.js"></script>
+
+    <!-- specifically used for Timepicker, block 1 of 2 end -->
+
 
 </head>
 
@@ -72,7 +88,12 @@
 <!-- Main navbar -->
 <div class="navbar navbar-inverse header-highlight bg-indigo">
     <div class="navbar-header">
-        <a class="navbar-brand" href="index.php"><img src="../../../../resources/assets/images/logo_light.png" alt=""></a>
+        <a class="navbar-brand" href="courseCreate.php">
+            <p>
+                <img src="../../../../resources/assets/images/logo_icon_light.png" alt="" height="18px"; width="25px";>
+                <b style="padding-left: 5px; font-size: 15px;">Admin Panel</b>
+            </p>
+        </a>
 
         <ul class="nav navbar-nav visible-xs-block">
             <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>

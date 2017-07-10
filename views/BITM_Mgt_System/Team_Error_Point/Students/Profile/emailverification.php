@@ -25,13 +25,13 @@ else{
              <div class=\"alert alert-info\">
              <strong>Don't worry! </strong>This email already verified. Please login!
               </div>");
-    Utility::redirect("admin_login.php");
+    Utility::redirect("student_entry.php");
    }
     else{
     Message::message("
              <div class=\"alert alert-info\">
              <strong>Sorry! </strong>This Token is Invalid. Please signup with a valid email!
               </div>");
-    Utility::redirect("admin_login.php");
+    Utility::redirect("student_entry.php");
    }
 }

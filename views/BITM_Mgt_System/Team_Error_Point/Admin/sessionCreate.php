@@ -47,6 +47,8 @@
 
             <!-- Content area -->
             <div class="content">
+
+
                 <div class="row">
                     <div class="col-md-6">
                         <?php
@@ -58,6 +60,8 @@
                         ?>
                     </div>
                 </div>
+
+
                 <!-- Main charts -->
                 <div class="row">
                     <div class="col-lg-8">
@@ -125,36 +129,38 @@
 
                                         </div>
 
-                                        </div>
-
-
                                         <div class="text-right">
                                             <button type="submit" class="btn btn-primary">Add Session <i class="icon-arrow-right14 position-right"></i></button>
                                         </div>
+
                                     </div>
+
+
+
                                 </div>
                             </form>
+
                         </div>
                         <!-- /add courses -->
 
-                        <div class="col-lg-4">
-                            <a class="btn btn-danger" href="sessionIndex.php?id=<?php echo $id; ?>" >Existing Sessions of this Batch</a>
-                        </div>
-
                     </div>
 
+                    <div class="col-lg-4">
+                        <a class="btn btn-danger" href="sessionIndex.php?id=<?php echo $id; ?>" >Existing Sessions of this Batch</a>
+                    </div>
 
-
-
-                </div>
                 <!-- /main charts -->
+                </div>
 
 
                 <!-- Footer -->
-                <div class="footer text-muted"">
-                &copy; 2017. <a href="#">BITM Management System Web App</a> by <a href="teamerrorpoint@gmail.com" target="_blank">Team Error Point - PHP B57</a>
+                <div class="footer text-muted">
+                    &copy; 2017. <a href="#">BITM Management System Web App</a> by <a href="teamerrorpoint@gmail.com" target="_blank">Team Error Point - PHP B57</a>
+                </div>
+                <!-- /footer -->
+
             </div>
-            <!-- /footer -->
+
 
         </div>
         <!-- /content area -->

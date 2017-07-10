@@ -15,7 +15,7 @@
     $status = $auth->setData($_SESSION)->logged_in();
 
     if(!$status) {
-        Utility::redirect('Profile/admin_login.php');
+        Utility::redirect('Profile/student_entry.php');
         return;
     }
 
@@ -90,8 +90,8 @@
     <div class="navbar-header">
         <a class="navbar-brand" href="courseCreate.php">
             <p>
-                <img src="../../../../resources/assets/images/logo_icon_light.png" alt="" height="20px"; width="30px";>
-                <b>Admin Panel</b>
+                <img src="../../../../resources/assets/images/logo_icon_light.png" alt="" height="18px"; width="25px";>
+                <b style="padding-left: 5px; font-size: 15px;">Admin Panel</b>
             </p>
         </a>
 

@@ -111,12 +111,13 @@
                                         </div>
 
                                     </div>
+                                        <div class="text-right">
+                                            <button type="submit" class="btn btn-primary">Update <i class="icon-arrow-right14 position-right"></i></button>
+                                        </div>
 
                                     </div>
 
-                                    <div class="text-right">
-                                        <button type="submit" class="btn btn-primary">Update <i class="icon-arrow-right14 position-right"></i></button>
-                                    </div>
+
                                 </div>
                             </div>
                         </form>
@@ -125,16 +126,16 @@
 
                 </div>
 
+                <!-- Footer -->
+                <div class="footer text-muted"">
+                &copy; 2017. <a href="#">BITM Management System Web App</a> by <a href="teamerrorpoint@gmail.com" target="_blank">Team Error Point - PHP B57</a>
+
+            </div>
+            <!-- /footer -->
+
             </div>
             <!-- /main charts -->
 
-
-            <!-- Footer -->
-            <div class="footer text-muted"">
-            &copy; 2017. <a href="#">BITM Management System Web App</a> by <a href="teamerrorpoint@gmail.com" target="_blank">Team Error Point - PHP B57</a>
-
-        </div>
-        <!-- /footer -->
 
     </div>
     <!-- /content area -->
