@@ -115,7 +115,7 @@ use App\Utility\Utility;
 				<div class="content">
 
 					<!-- Simple login form -->
-					<form action="../Authentication/entry.php" method="post">
+					<form action="../Authentication/entry_2.php" method="post">
 						<div class="panel panel-body login-form">
 							<div class="text-center">
 								<div class="icon-object border-slate-300 text-slate-300"><i class="icon-reading"></i></div>

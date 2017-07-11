@@ -48,9 +48,36 @@ class StudentAuth extends DB{
         }
     }
 
+
+    public function check_batchHasClassToday(){
+
+        $query="SELECT * FROM `tbl_students` AS st INNER JOIN `tbl_session` AS ses ON st.batch_id = ses.batch_id WHERE `seid` = '$this->seid' AND ses.date = CURRENT_DATE;";
+
+        $STH =$this->DBH->query($query);
+
+        $STH->setFetchMode(PDO::FETCH_OBJ);
+        $allData = $STH->fetchAll();
+        return $allData;
+
+    }
+
+
+    public function check_properTiming(){
+
+        $query="SELECT * FROM `tbl_students` AS st INNER JOIN `tbl_session` AS ses ON st.batch_id = ses.batch_id WHERE `seid` = '$this->seid' AND ses.date = CURRENT_DATE AND CURRENT_TIME BETWEEN ses.start_time AND ses.end_time;";
+
+        $STH =$this->DBH->query($query);
+
+        $STH->setFetchMode(PDO::FETCH_OBJ);
+        $allData = $STH->fetchAll();
+        return $allData;
+
+    }
+
+
     public function check_batchNsessionSchedule(){
 
-        $query="SELECT * FROM `tbl_students` AS st INNER JOIN `tbl_session` AS ses ON st.batch_id = ses.batch_id WHERE `seid` = '$this->seid' AND ses.date = CURRENT_DATE AND CURRENT_TIME BETWEEN ses.start_time AND ADDTIME(ses.start_time, '04:30:00') ;";
+        $query="SELECT * FROM `tbl_students` AS st INNER JOIN `tbl_session` AS ses ON st.batch_id = ses.batch_id WHERE `seid` = '$this->seid' AND ses.date = CURRENT_DATE AND CURRENT_TIME BETWEEN ses.start_time AND ADDTIME(ses.start_time, '00:30:00') ;";
 
         $STH =$this->DBH->query($query);
 
