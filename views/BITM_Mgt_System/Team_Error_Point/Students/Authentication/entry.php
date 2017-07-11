@@ -35,14 +35,16 @@ if($status) {
         $properTiming = $auth->setData($_POST)->check_properTiming();
 
         if (!$properTiming) {
+
             Message::message("
                 <div class=\"alert alert-danger\">
                             <h6>
-                                <strong>You are too Early or too Late for your session!</strong>
+                                <strong>You are too Early for your session!</strong>
                             </h6>
                 </div>");
 
             Utility::redirect('../Profile/student_entry.php');
+
         } else {
 
             $allData = $auth->setData($_POST)->check_batchNsessionSchedule();

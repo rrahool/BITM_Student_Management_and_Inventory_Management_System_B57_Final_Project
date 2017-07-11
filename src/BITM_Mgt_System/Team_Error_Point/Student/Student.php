@@ -10,11 +10,8 @@ use PDO;
 class Student extends DB{
 
     public $id;
-    public $firstName;
-    public $lastName;
+    public $seid;
     public $email="";
-    public $username="";
-    public $password="";
     public $email_token="";
 
     public function __construct()
@@ -27,21 +24,16 @@ class Student extends DB{
         if(array_key_exists('id',$data)){
             $this->id=$data['id'];
         }
-        if(array_key_exists('first_name',$data)){
-            $this->firstName=$data['first_name'];
+
+        if(array_key_exists('seid',$data)){
+            $this->id=$data['seid'];
         }
-        if(array_key_exists('last_name',$data)){
-            $this->lastName=$data['last_name'];
-        }
+
         if(array_key_exists('email',$data)){
             $this->email=$data['email'];
         }
-        if(array_key_exists('username',$data)){
-            $this->username=$data['username'];
-        }
-        if(array_key_exists('password',$data)){
-            $this->password=md5($data['password']);
-        }
+
+
         if(array_key_exists('email_token',$data)){
             $this->email_token=$data['email_token'];
         }
@@ -51,9 +43,12 @@ class Student extends DB{
 
     public function store(){
 
-        $query = "INSERT INTO `db_bitm_mgt`.`tbl_admin` (`first_name`, `last_name`, `email`, `username`, `password`, `email_verified`) VALUES (?, ?, ?, ?, ?, ?);";
+        $query = "INSERT INTO tbl_attendance (seid, email, batch_id, session_id)
+                    SELECT tbl_students.seid, tbl_students.email, tbl_students.batch_id, tbl_session.id
+                      FROM tbl_students, tbl_session
+                        WHERE tbl_students.seid = '$this->seid' AND date = CURRENT_DATE;";
 
-        $dataArray = array($this->firstName, $this->lastName, $this->email, $this->username, $this->password, $this->email_token);
+        $dataArray = array($this->seid, $this->email, $this->email_token);
 
         $STH = $this->DBH->prepare($query);
         $result = $STH->execute($dataArray);
